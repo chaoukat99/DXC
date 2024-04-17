@@ -13,7 +13,7 @@ import { bgBlur } from '../../../../css/css';
 
 import Iconify from '../Iconfy';
 
-import Searchbar from './searchbar';
+import { Link } from 'react-router-dom';
 import { NAV, HEADER } from './config-layout';
 import AccountPopover from './account-popover';
 
@@ -32,7 +32,9 @@ export default function Header({ onOpenNav }) {
         </IconButton>
       )}
 
-      
+      <Link to="/Dashboard-Admin" style={{ textDecoration: 'none', color: 'inherit' }}>
+        Tableau de bord
+      </Link>
 
       <Box sx={{ flexGrow: 1 }} />
 

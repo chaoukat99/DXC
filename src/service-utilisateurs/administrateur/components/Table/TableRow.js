@@ -16,7 +16,6 @@ import Iconify from '../Iconfy';
 // ----------------------------------------------------------------------
 
 export default function UserTableRow({
-  selected,
   firstName,
   lastName,
   email,
@@ -36,10 +35,8 @@ export default function UserTableRow({
 
   return (
     <>
-      <TableRow hover tabIndex={-1} role="checkbox" selected={selected}>
-        <TableCell padding="checkbox">
-          <Checkbox disableRipple checked={selected} onChange={handleClick} />
-        </TableCell>
+      <TableRow hover tabIndex={-1} role="checkbox" >
+        
 
 
 
