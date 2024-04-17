@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Card from '@mui/material/Card';
+import { Card, CardContent } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import Button from '@mui/material/Button';
@@ -97,39 +97,46 @@ export default function EmployeeTable() {
 
   return (
     <Container>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Users</Typography>
+     
+     <Card sx={{ minWidth: 800, margin: 'auto', my: 1 }}>
+  <CardContent sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <Typography variant="h4" sx={{ color: '#75356b', my: 1 }}>
+      Liste des utilisateurs 
+    </Typography>
+    <Button
+      variant="contained" 
+      sx={{ 
+        backgroundColor: '#75356b',
+        '&:hover': {
+          backgroundColor: '#ac85a6',
+          color: 'white',
+        },}} 
+      startIcon={<Iconify icon="eva:plus-fill" />}
+      component={Link} 
+      to="/Add-Employee"
+    >
+      Ajouter utilisateur
+    </Button>
+  </CardContent>
+</Card>
 
-        <Button variant="contained" 
-        sx={{ backgroundColor: '#75356b',
-             '&:hover': {
-              backgroundColor: '#ac85a6',
-              color:'White'},
-          }} 
-        startIcon={<Iconify icon="eva:plus-fill" />}
-        component={Link} 
-        to="/Add-Employee">
-          Ajouter utilisateur
-        </Button>
-      </Stack>
+        
+      
 
-      <Card>
+      <Card  sx={{margin: 'auto', display: 'flex', flexDirection: 'column' }}>
         <TableToolbar
-          numSelected={selected.length}
           filterName={filterName}
           onFilterName={handleFilterByName}
         />
 
-        <Scrollbar>
-          <TableContainer sx={{ overflow: 'unset' }}>
+        <Scrollbar sx={{ minWidth: 800 }}>
+          <TableContainer sx={{ overflow: 'unset', flexGrow: 1 }}>
             <Table sx={{ minWidth: 800 }}>
               <TableHead
                 order={order}
                 orderBy={orderBy}
                 rowCount={users.length}
-                numSelected={selected.length}
                 onRequestSort={handleSort}
-                onSelectAllClick={handleSelectAllClick}
                 headLabel={[
                   { id: 'firstName', label: 'Prénom' },
                   { id: 'lastName', label: 'Nom' },
@@ -155,18 +162,12 @@ export default function EmployeeTable() {
                     />
                   ))}
 
-                <TableEmptyRows
-                  height={77}
-                  emptyRows={emptyRows(page, rowsPerPage, users.length)}
-                />
-
+               
                 {notFound && <TableNoData query={filterName} />}
+               
               </TableBody>
             </Table>
-          </TableContainer>
-        </Scrollbar>
-
-        <TablePagination
+            <TablePagination
           page={page}
           component="div"
           count={users.length}
@@ -175,6 +176,10 @@ export default function EmployeeTable() {
           rowsPerPageOptions={[5, 10, 25]}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+          </TableContainer>
+        </Scrollbar>
+      
+        
       </Card>
     </Container>
   );

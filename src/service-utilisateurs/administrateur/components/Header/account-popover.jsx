@@ -8,7 +8,7 @@ import { alpha } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-
+import { Link } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -102,6 +102,8 @@ export default function AccountPopover() {
           disableTouchRipple
           onClick={handleClose}
           sx={{ typography: 'body2', color: 'error.main', py: 1.5 }}
+          component={Link} 
+          to="/login"
         >
           Se déconnecter
         </MenuItem>
