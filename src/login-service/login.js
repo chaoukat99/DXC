@@ -39,8 +39,9 @@ function Login() {
       password: encryptedPassword.toString()
     };
     
-    fetch("http://localhost:8091/Utilisateur-service/login", {
+    fetch("http://localhost:8083/SERVICE-UTILISATEUR/Utilisateur-service/login", {
   method: "POST",
+  mode: "cors",
   headers: {
     Accept: 'application/json',
     "Content-Type": "application/json",
