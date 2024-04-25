@@ -6,9 +6,9 @@ import  {BrowserRouter,Routes,Route} from 'react-router-dom';
 import AddEmployeePage from './service-utilisateurs/administrateur/pages/AddEmployeePage.js';
 import AdminDashboardPage from './service-utilisateurs/administrateur/pages/AdminDashboardPage.js';
 import Login from './login-service/login.js';
-import Profile from './service-utilisateurs/Profile.js';
 import Login2 from './login-service/Login2.jsx';
 import Home2 from './Home/components/Home2.jsx';
+import Profile from './Profile/Profile.jsx';
 
 function App() {
   return (
