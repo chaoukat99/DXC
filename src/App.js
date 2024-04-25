@@ -7,15 +7,17 @@ import AddEmployeePage from './service-utilisateurs/administrateur/pages/AddEmpl
 import AdminDashboardPage from './service-utilisateurs/administrateur/pages/AdminDashboardPage.js';
 import Login from './login-service/login.js';
 import Profile from './service-utilisateurs/Profile.js';
-
+import Login2 from './login-service/Login2.jsx';
+import Home2 from './Home/components/Home2.jsx';
 
 function App() {
   return (
     
     <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Home2/>}/>
           <Route path='/Profile' element={<Profile/>}></Route>
-            <Route path='/login' element={<Login/>}></Route>
+            <Route path='/login' element={<Login2/>}></Route>
             <Route path="/Add-Employee" element={<AddEmployeePage/>}> </Route>
             <Route path="/Dashboard-Admin" element={<AdminDashboardPage/>}></Route>
         </Routes>

@@ -5,8 +5,8 @@ import { Button, Card, CardContent, FormControl, InputLabel, Select, MenuItem ,F
 import FilledInput from '@mui/material/FilledInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Visibility from '@mui/icons-material/Visibility';
+// import VisibilityOff from '@mui/icons-material/VisibilityOff';
+// import Visibility from '@mui/icons-material/Visibility';
 
 function EmployeeForm({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -94,6 +94,7 @@ function EmployeeForm({ onSubmit }) {
               onChange={handleChange}
               variant="filled"
               error={errors.firstName}
+               color='secondary'
               sx={{
                 '& .MuiFilledInput-underline:before': {
                   borderBottomColor: errors.firstName ? 'red' : '#75356b'
@@ -114,6 +115,7 @@ function EmployeeForm({ onSubmit }) {
               onChange={handleChange}
               variant="filled"
               error={errors.lastName}
+              color='secondary'
               sx={{
                 '& .MuiFilledInput-underline:before': {
                   borderBottomColor: errors.lastName ? 'red' : '#75356b'
@@ -134,6 +136,7 @@ function EmployeeForm({ onSubmit }) {
               onChange={handleChange}
               variant="filled"
               error={errors.email}
+              color='secondary'
               sx={{
                 '& .MuiFilledInput-underline:before': {
                   borderBottomColor: errors.email ? 'red' : '#75356b'
@@ -169,7 +172,7 @@ function EmployeeForm({ onSubmit }) {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -199,6 +202,7 @@ function EmployeeForm({ onSubmit }) {
                 onChange={handleChange}
                 variant="filled"
                 error={errors.role}
+                color='secondary'
                 sx={{
                   '& .MuiFilledInput-underline:before': {
                     borderBottomColor: errors.role ? 'red' : '#75356b'
